@@ -16,6 +16,24 @@
 
 /* Common */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .body {
   height: 100%;
 
@@ -49,18 +67,39 @@
 }
 
 .site-menu {
-  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 30px;
   padding: 0;
 
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
+  list-style-type: none;
+}
+
+.site-menu-item {
+  display: flex;
+  align-items: center;
 }
 
 .site-menu-link {
+  display: block;
+  padding: 17px;
   color: #000000;
 
   text-decoration: none;
+}
+
+.additional-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.additional-menu-button {
+  margin-left: 20px;
 }
 
 /* Footer */
@@ -68,11 +107,25 @@
 .page-footer {
   display: flex;
   justify-content: space-between;
-  padding: 0 72px;
+  padding: 30px 72px;
 }
 
+/* my */
 .footer-social {
   margin: 0;
+  padding: 0; 
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+/* my */
+.social-item {
+  margin-right: 30px;
+  margin-bottom: 5px;
+}
+/* my */
+.social-item:nth-child(3n) {
+  margin-right: 0;
 }
 
 .footer-phone {
@@ -107,13 +160,6 @@
   font-size: 60px;
   line-height: 78px;
 }
-
-.breadcrumbs {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  display: flex;
-}
   
 /* Section */
 
@@ -128,7 +174,7 @@
 
 .section-description {
   font-size: 22px;
-  line-height: 36px;
+  line-height: 26px;
 }
 
 /* Button */
@@ -150,6 +196,14 @@
 
 .button-large {
   font-size: 20px;
+}
+
+/* Icon button */
+
+.icon-button {
+  display: block;
+  width: 42px;
+  height: 42px;
 }
 
 /* Forms */
@@ -175,6 +229,22 @@
   opacity: 0.3;
 }
 
+/* Breadcrumbs */
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 45px;
+  padding: 0;
+
+  font-size: 16px;
+}
+
+/* my */
+.breadcrumbs-link {
+  margin-right: 26px;
+}
 
 /* Card */
 
@@ -203,6 +273,8 @@
 .advantages-list {
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .advantages-list-inner {
@@ -248,15 +320,40 @@
 .search {
   text-align: center;
 }
+/* my */
+.search .section-title {
+  margin-bottom: 29px;
+}
+/* my */
+.search .section-description {
+  margin-bottom: 56px;
+  line-height: 26px;
+}
+/* my */
+.search-button {
+  display: block;
+  margin-bottom: 93px;
+}
 
 /* Subscribe */
 
 .subscribe {
+  padding-top: 94px;
+  padding-bottom: 94px;
   text-align: center;
 }
 
 .subscribe-primary .section-title {
   color: #ffffff;
+}
+
+.subscribe .section-title {
+  margin-bottom: 29px;
+}
+
+.subscribe .section-description {
+  margin-bottom: 46px;
+  line-height: 26px;
 }
   
 .subscribe-primary {
@@ -269,7 +366,21 @@
 /* Social */
 
 .social {
+  display: flex;
+  flex-wrap: wrap;
   padding: 0;
+
+  list-style: none;
+}
+
+.social-item {
+  margin: 0 2px;
+}
+
+.social-link {
+  display: block;
+  width: 40px;
+  height: 40px;
 }
 
 /* Filter */
@@ -299,6 +410,8 @@
 .filter-list {
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .filter-buttons {
@@ -326,7 +439,9 @@
 
 .catalog-sort {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  padding: 44px 0;
 }
 
 .catalog-title {
@@ -339,30 +454,67 @@
   margin-right: auto;
 }
 
+/* View */
+
 .view {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
+
+  list-style: none;
+}
+
+.view-item {
+  margin: 0 4px;
+}
+
+.view-link {
+  display: block;
+  width: 48px;
+  height: 48px;
 }
 
 /* Pagination */
 
+.pagination {
+  padding: 30px 0;
+}
+
 .pagination-nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  margin-top: 30px;
 }
 
 .pagination-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
+
+  list-style: none;
+}
+
+.pagination-item {
+  margin: 0 4px;
 }
 
 .pagination-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 55px;
+  height: 55px;
+  padding: 8px;
+
   color: #ffffff;
   background-color: #83B3D3;
 
   font-size: 20px;
   font-weight: 700;
+  text-align: center;
   text-decoration: none;
 }
 

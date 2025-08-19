@@ -13,10 +13,10 @@
         <img src="images/logo.png" width="139" height="70" alt="Седона">
       </a>
       <ul class="site-menu">
-        <li class="site-menu-item site-menu-item-active">
+        <li class="site-menu-item>
           <a class="site-menu-link" href="index.html">Главная</a>
         </li>
-        <li class="site-menu-item site-menu-item-active">
+        <li class="site-menu-item">
           <a class="site-menu-link" href="#">О Седоне</a>
         </li>
         <li class="site-menu-item site-menu-item-active">
@@ -31,7 +31,7 @@
           <span class="visually-hidden">Избранное</span>
           <span class="icon-button-counter">12</span>
         </a>
-        <a class="button" href="#">Хочу сюда!</a>
+        <a class="button button-secondary additional-menu-button" href="#">Хочу сюда!</a>
       </div>
     </nav>
   </header>
@@ -41,7 +41,7 @@
       <h1 class="main-heading">Гостиницы Седоны</h1>
        <ul class="breadcrumbs">
         <li class="breadcrumbs-item">
-          <a class="breadcrumbs-link" href="index.html">
+          <a class="breadcrumbs-link breadcrumbs-link-home" href="index.html">
               <span class="visually-hidden">Главная страница</span>
           </a>
         </li>
@@ -72,13 +72,13 @@
               </li>
               <li class="filter-item">
                 <label class="control">
-                  <input class="control-input" name="infrastructure" value="wi-fi">
+                  <input class="control-input"  type="checkbox" name="infrastructure" value="wi-fi">
                   <span class="control-lead">Wi-Fi</span>
                 </label>
               </li>
             </ul>
           </fieldset>
-    
+
           <fieldset class="filter-fieldset">
             <legend class="filter-title">Тип жилья:</legend>
 
@@ -103,8 +103,8 @@
               </li>
             </ul>
           </fieldset>
-    
-          <fieldset class="filter-fieldset">
+
+          <fieldset class="filter-fieldset  filter-fieldset-price">
             <legend class="filter-title">Стоимость, ₽:</legend>
 
             <div class="range">
@@ -112,7 +112,7 @@
                   <span class="range-title">от</span>
                   <input class="range-input" type="number" name="price-from" value="0" min="0" max="10000" step="100">
                 </label>
-    
+
                 <label class="range-field">
                   <span class="range-title">до</span>
                   <input class="range-input" type="number" name="price-to" value="9000" min="0" max="10000" step="100">
@@ -139,26 +139,16 @@
         </section>
       </div>
 
-      <a href="#" class="button button-light">
-        <span class="visually-hidden">Показать таблицу</span>
-      </a>
-      <a class="button" href="#">
-        <span class="visually-hidden">Показать карточки</span>
-      </a>
-      <a href="#" class="button button-light">
-        <span class="visually-hidden">Показать список</span>
-      </a>
-
       <section class="catalog">
         <h2 class="visually-hidden">Результаты поиска</h2>
 
         <div class="catalog-sort">
           <p class="section-title catalog-title">Найдено гостиниц: <span class="count">38</span></p>
-  
+
           <h3 class="visually-hidden">Сортировка и отображение</h3>
           <details class="select catalog-select">
             <summary class="select-button">Сначала дешёвые</summary>
-  
+
             <ul class="select-menu">
               <li class="select-item select-item-active">
                 <a class="select-option" href="#">Сначала дешёвые</a>
@@ -193,6 +183,7 @@
           </ul>
         </div>
 
+        <div class="card-list">
 
         <h3 class="visually-hidden">Список гостиниц</h3>
 
@@ -210,8 +201,8 @@
             <span class="card-description-defenition">От 4000 ₽</span>
           </p>
 
-          <a class="button" href="#">Подробнее</a>
-          <a class="button" href="#">В избранное</a>
+          <a class="card-more button button-secondary" href="#">Подробнее</a>
+          <a class="card-chosen button" href="#">В избранное</a>
 
           <p class="star star-four">
             <span class="visually-hidden">4 звезды</span>
@@ -241,7 +232,7 @@
           </p>
           <p class="card-rate">Рейтинг: 8,9</p>
         </article>
-      
+
         <article class="card">
           <h4 class="card-title">
             <a class="card-link" href="#">
@@ -264,7 +255,7 @@
           </p>
           <p class="card-rate">Рейтинг: 9,2</p>
         </article>
-      
+
         <article class="card">
           <h4 class="card-title">
             <a class="card-link" href="#">
@@ -287,9 +278,9 @@
           </p>
           <p class="card-rate">Рейтинг: 9,2</p>
         </article>
-
+</div>
         <div class="pagination">
-          <button class="button" type="button">Загрузить ещё</button>
+          <button class="pagination-button button button-large" type="button">Загрузить ещё</button>
 
           <div class="pagination-nav">
             <h3 class="visually-hidden">Список страниц</h3>
@@ -314,11 +305,11 @@
                 </li>
             </ul>
             <div class="pagination-select">
-                <p>Гостиниц на странице:</p>
-    
+                <p  class="select-label">Гостиниц на странице:</p>
+
                 <details class="select">
                   <summary class="select-button">4</summary>
-    
+
                   <ul class="select-menu">
                     <li class="select-item select-item-active">
                       <a class="select-option" href="#">5</a>
@@ -336,13 +327,12 @@
                 </details>
             </div>
           </div>
-
         </section>
 
         <section class="subscribe">
             <h2 class="section-title">Подпишитесь на рассылку</h2>
             <p class="section-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
-    
+
             <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
               <label class="subcribe-field field">
                 <span class="visually-hidden">Ваш e-mail</span>
@@ -371,12 +361,12 @@
             </a>
           </li>
         </ul>
-  
+
         <a class="footer-phone" href="88128121212">+7 (812) 812-12-12</a>
-  
+
         <a class="footer-developer" href="https://htmlacademy.ru/">
           <img src="images/svg/htmlacademy.svg" width="115" height="33" alt="Разработано HTML Academy">
         </a>
-      </footer> 
+      </footer>
 </body>
 </html>
